@@ -20,6 +20,10 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install python3
 ```
+Alternatively for Mac download and install from:
+
+ttps://www.python.org/downloads/mac-osx/
+
 Download Persona Creator to your computer. 
 
 Using git:
