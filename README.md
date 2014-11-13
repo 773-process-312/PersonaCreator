@@ -11,7 +11,7 @@ A simple python3 command line application for creating user personas.
 
 ## Installation instructions
 
-### Installing on Linux
+### Installing on Linux and Mac
 
 Ensure the latest version of python3 is installed. 
 
