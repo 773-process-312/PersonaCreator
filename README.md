@@ -11,7 +11,7 @@ A simple python3 command line application for creating user personas.
 
 ## Installation instructions
 
-### Installing on Linux and Mac
+### Installing on Linux and Mac (recommended)
 
 Ensure the latest version of python3 is installed. 
 
@@ -38,6 +38,35 @@ pcreator
 ```
 
 Persona Creator can be launched from any directory using the `pcreator` command.
+
+### Installing on Windows
+
+Ensure the latest version of python3 is installed from: 
+
+https://www.python.org/downloads/windows/
+
+Download Persona Creator to your computer. 
+
+Using git bash:
+
+```
+cd ~
+git clone https://github.com/Honeystone/PersonaCreator.git
+cd PersonaCreator
+```
+Setting up the Windows(7) environment variable:
+
+* Go to `Control Panel`
+* Click `System and Security`
+* Click `System`
+* Click `Advanced system settings`
+* Switch to `Advanced` tab
+* Click `Environment Variables` 
+* Select `Path` in the `System Variable` section
+* Click `Edit`
+* Add the path to Persona Creator to the end of the environment variable string e.g. ";c:\Users\[Username]\PersonaCreator" 
+
+Persona Creator can be launched from the Windows command prompt in any directory using the `pcreator` command.
 
 ## License
 
