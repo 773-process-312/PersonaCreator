@@ -103,6 +103,7 @@ def avatarSelector(age, gender):
 data = {"name": "", "age": 0, "gender": "", "occupation": "", "lifeDay": "", "goals": [], "frustrations": [], "skills": []}
 
 # Config 
+version = "1.0.0"
 filePrefix = "persona-"
 vowels = ["a", "e", "i", "o", "u"]
 avatars = (
@@ -145,6 +146,8 @@ pageEnd = '</div> </body> </html>'
 
 # Startup 
 printTitle()
+
+print("Version \033[93m" + version + "\033[0m")
 
 infoMsg("\033[1mWelcome to the Persona Creator tool.\n" + \
     "Persona Creator was developed by Sam Lashenko and Elodie Som at Honeystone Consulting Ltd.")
