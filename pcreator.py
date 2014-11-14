@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+import locale
+locale.setlocale(locale.LC_ALL, '')
+
 # Functions 
 def printTitle():
     print("\n\033[92m _____                                   _____                _")
@@ -23,6 +26,15 @@ def getAge(name):
         errorMsg("Please provide an integer value from 0 to 120 (you doughnut!)")
         age = getAge(name)
     return age
+
+def getIncome():
+    income = input("And their approximate annual income " + currencySymbol + "? ").strip()
+    if income.isdigit():
+        income = int(income)
+    else:
+        errorMsg("Please provide an integer value")
+        income = getIncome()
+    return income
 
 def getSelection():
     available = [1, 2, 3, 4]    
@@ -100,11 +112,12 @@ def avatarSelector(age, gender):
         return avatars[10]
 
 # Data to be collected
-data = {"name": "", "age": 0, "gender": "", "occupation": "", "lifeDay": "", "goals": [], "frustrations": [], "skills": []}
+data = {"name": "", "age": 0, "gender": "", "occupation": "", "income": 0, "lifeDay": "", "goals": [], "frustrations": [], "skills": []}
 
 # Config 
 version = "1.0.0"
 filePrefix = "persona-"
+currencySymbol = locale.localeconv()['currency_symbol']
 vowels = ["a", "e", "i", "o", "u"]
 avatars = (
     # black_man
@@ -165,8 +178,9 @@ elif gender == "f" or gender == "female":
 else:
     data["gender"] = "Other"
 
-# Collect occupation and lifeDay 
+# Collect occupation, income and lifeDay 
 data["occupation"] = input("What is their occupation? ").strip()
+data["income"] = getIncome()
 data["lifeDay"] = input("Briefely describe a day in the life of " + data["name"] + ". Be creative!! ").strip()
 
 # Collect goals 
@@ -180,7 +194,7 @@ else:
 
 # Persona introduction 
 print("Meet " + data["name"] + " a " + str(data["age"]) + " year old " + data["gender"] + ".", 
-    data["name"] + " works as " + occupationStr + ".",
+    data["name"] + " works as " + occupationStr + " and earns around " + locale.currency(data["income"], grouping=True) + ".", 
     "A day in the life of " + data["name"] + ": " + data["lifeDay"], sep = "\n")
 
 # Goals list
