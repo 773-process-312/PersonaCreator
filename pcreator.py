@@ -23,7 +23,7 @@ def getAge(name):
     if age.isdigit() and int(age) <= 120:
         age = int(age)  
     else:
-        errorMsg("Please provide an integer value from 0 to 120 (you doughnut!)")
+        errorMsg("Please provide an integer value from 0 to 120")
         age = getAge(name)
     return age
 
@@ -153,7 +153,7 @@ pageCss += ".wrapper {max-width: 920px; margin: 0 auto;}"
 pageCss += ".main {width: 62%; float: left; border-right: 1px dotted #ddd; padding-right: 4%;}" 
 pageCss += ".secondary {width: 30%; float: right;}" 
 pageCss += " span.occupation {font-style: italic;}"
-pageCss += " span.occupation:before {content: '- '}"
+pageCss += " span.income {font-size: 80%;} "
 pageStart = '<html> <head> <title>Personas</title> <style>' + pageCss + '</style> </head> <body> <div class="wrapper">'
 pageEnd = '</div> </body> </html>'
 
@@ -222,10 +222,12 @@ f.close()
 
 # Html document
 # Left side
-html  = '<header>' # Open header
+html  = '<meta charset="utf-8" />'
+html += '<header>' # Open header
 html += '<img src="' + avatarSelector(data["age"], data["gender"]) + '" alt="Persona avatar" />'
 html += '<h1>' + data["name"] + ', ' + str(data["age"]) + ', ' + data["gender"] + '</h1>'
-html += '<span class="occupation">' + data["occupation"] + '</span>'
+html += '<p>' + '<span class="occupation">' + data["occupation"] + '</span>' + '<br/>'
+html += '<span class="income">' + locale.currency(data["income"], grouping=True) + ' PA' + '</span>' + '</p>'
 html += '</header>' # Close header
 html += '<div class="main">' # Open main
 html += '<section class="goals">' # Open goals section
