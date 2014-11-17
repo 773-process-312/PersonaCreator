@@ -7,7 +7,21 @@
 	                                                                             
 # Persona Creator 
 
-A simple python3 command line application for creating user personas.
+Persona Creator is a simple python3 command line application for creating user personas. It is a single lightweight file that runs cross-platform including Android and iOS. It has been developed by Honeystone employees as part of an introductory training exercise to systems planning and learning Python.
+
+Persona Creator enables you, through a command line interface, to easily and efficiently create user personas to aid with UX design as part of a comprehensive planning procedure. Each persona created is outputted as a html document with clean, minimalistic styling (see examples). The system supports creating personas with the following fields:
+
+* Name
+* Age
+* Gender
+* Thumbnail image (which is automatically selected based on age range and gender)
+* Occupation
+* Annual income
+* A day in the life of
+* Goals
+* Frustrations (optional)
+* Skills (optional)
+* Custom fields (optional - coming soon!)
 
 ## Installation instructions
 
