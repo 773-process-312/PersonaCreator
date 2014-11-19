@@ -227,7 +227,7 @@ html += '<header>' # Open header
 html += '<img src="' + avatarSelector(data["age"], data["gender"]) + '" alt="Persona avatar" />'
 html += '<h1>' + data["name"] + ', ' + str(data["age"]) + ', ' + data["gender"] + '</h1>'
 html += '<p>' + '<span class="occupation">' + data["occupation"] + '</span>' + '<br/>'
-html += '<span class="income">' + locale.currency(data["income"], grouping=True) + ' PA' + '</span>' + '</p>'
+html += '<span class="income">' + locale.currency(data["income"], grouping=True) + ' pa' + '</span>' + '</p>'
 html += '</header>' # Close header
 html += '<div class="main">' # Open main
 html += '<section class="goals">' # Open goals section
